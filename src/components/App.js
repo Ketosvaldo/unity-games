@@ -1,20 +1,25 @@
 import React from 'react';
 import './App.css';
-//import Runnerverse from './Runnerverse';
+import Header from '../shared/layout/Header';
+import Footer from '../shared/layout/Footer';
+import Content from '../shared/layout/Content';
 
-function App() {
+import {element} from 'prop-types';
+
+function App(props) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={require('../shared/img/LogoReact.png')} className="App-logo" alt="logo" />
-        <h1>KG.React</h1>
-        <div className="App-routes">
-          <a href="./" className="Text">Home</a>
-          <a href="./about" className="Text">About</a>
-        </div>
-      </header>
+      <Header title="KG.react"/>
+      <Content>
+        {props.children}
+      </Content>
+      <Footer/>
     </div>
   );
+}
+
+App.propTypes = {
+  children: element.isRequired,
 }
 
 export default App;

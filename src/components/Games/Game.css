@@ -1,5 +1,7 @@
 .container {
     /* The container determains the size. */
+    border: 6px solid black;
+    border-radius: 8px;
     width: 960px;
     height: 540px;
   }
