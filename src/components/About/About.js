@@ -2,7 +2,7 @@ import React from 'react';
 import './About.css';
 import items from '../../items/items';
 import Cards from './Cards';
-function About(props) {
+function About() {
     return (
         <div className="About-container">
             <h2>Sobre mi</h2>
@@ -23,16 +23,18 @@ function About(props) {
             <p>
                 Aqui un poco de arte que considero esta genial
             </p>
-            {
-                items.map((items, i) => (
-                    <Cards
-                        key = {i}
-                        item = {items.id}
-                        image = {items.image}
-                        description = {items.description}
-                    />
-                ))
-            }
+            <div className="Cards-display">
+                {
+                    items.map((items, i) => (
+                        <Cards
+                            key = {i}
+                            item = {items.id}
+                            image = {items.image}
+                            description = {items.description}
+                        />
+                    ))
+                }
+            </div>
         </div>
     );
 }
